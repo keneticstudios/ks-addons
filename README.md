@@ -70,4 +70,4 @@ Event: **`ks-addons:client:RestoreClothes`** — refresh appearance + inventory 
 
 ---
 
-**Author:** KS Development · **Description:** KS OX Inventory Addons
+**Author:** Kenetic Studios · **Description:** KS OX Inventory Addons
