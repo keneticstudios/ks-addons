@@ -1,0 +1,47 @@
+<svg width="133" height="26" viewBox="0 0 133 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_215_2" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="37" height="26">
+<rect width="5" height="26" fill="#FFD900"/>
+<rect x="8" width="5" height="8" fill="#FFD900"/>
+<rect x="8" y="18" width="5" height="8" fill="#FFD900"/>
+<rect x="16" width="5" height="8" fill="#FFD900"/>
+<rect x="16" y="18" width="5" height="8" fill="#FFD900"/>
+<rect x="24" width="5" height="8" fill="#FFD900"/>
+<rect x="24" y="18" width="5" height="8" fill="#FFD900"/>
+<rect x="32" width="5" height="8" fill="#FFD900"/>
+<rect x="32" y="18" width="5" height="8" fill="#FFD900"/>
+</mask>
+<g mask="url(#mask0_215_2)">
+<rect width="5" height="8" transform="matrix(-1 0 0 1 37 0)" fill="white" fill-opacity="0.04"/>
+<rect width="5" height="8" transform="matrix(-1 0 0 1 37 18)" fill="white" fill-opacity="0.04"/>
+<rect width="5" height="8" transform="matrix(-1 0 0 1 29 0)" fill="white" fill-opacity="0.04"/>
+<rect width="5" height="8" transform="matrix(-1 0 0 1 29 18)" fill="white" fill-opacity="0.04"/>
+<rect width="5" height="8" transform="matrix(-1 0 0 1 21 0)" fill="white" fill-opacity="0.08"/>
+<rect width="5" height="8" transform="matrix(-1 0 0 1 21 18)" fill="white" fill-opacity="0.08"/>
+<rect width="5" height="8" transform="matrix(-1 0 0 1 13 0)" fill="white" fill-opacity="0.08"/>
+<rect width="5" height="8" transform="matrix(-1 0 0 1 13 18)" fill="white" fill-opacity="0.08"/>
+<rect width="5" height="26" transform="matrix(-1 0 0 1 5 0)" fill="white" fill-opacity="0.08"/>
+</g>
+<rect x="40" width="5" height="8" fill="white" fill-opacity="0.04"/>
+<rect x="40" y="18" width="5" height="8" fill="white" fill-opacity="0.04"/>
+<rect x="48" width="5" height="8" fill="white" fill-opacity="0.02"/>
+<rect x="48" y="18" width="5" height="8" fill="white" fill-opacity="0.02"/>
+<rect x="56" width="5" height="8" fill="white" fill-opacity="0.02"/>
+<rect x="56" y="18" width="5" height="8" fill="white" fill-opacity="0.02"/>
+<rect x="64" width="5" height="8" fill="white" fill-opacity="0.01"/>
+<rect x="64" y="18" width="5" height="8" fill="white" fill-opacity="0.01"/>
+<rect x="72" width="5" height="8" fill="white" fill-opacity="0.02"/>
+<rect x="72" y="18" width="5" height="8" fill="white" fill-opacity="0.02"/>
+<rect x="80" width="5" height="8" fill="white" fill-opacity="0.02"/>
+<rect x="80" y="18" width="5" height="8" fill="white" fill-opacity="0.02"/>
+<rect x="88" width="5" height="8" fill="white" fill-opacity="0.04"/>
+<rect x="88" y="18" width="5" height="8" fill="white" fill-opacity="0.04"/>
+<rect x="96" width="5" height="8" fill="white" fill-opacity="0.04"/>
+<rect x="96" y="18" width="5" height="8" fill="white" fill-opacity="0.04"/>
+<rect x="104" width="5" height="8" fill="white" fill-opacity="0.04"/>
+<rect x="104" y="18" width="5" height="8" fill="white" fill-opacity="0.04"/>
+<rect x="112" width="5" height="8" fill="white" fill-opacity="0.08"/>
+<rect x="112" y="18" width="5" height="8" fill="white" fill-opacity="0.08"/>
+<rect x="120" width="5" height="8" fill="white" fill-opacity="0.08"/>
+<rect x="120" y="18" width="5" height="8" fill="white" fill-opacity="0.08"/>
+<rect x="128" width="5" height="26" fill="white" fill-opacity="0.08"/>
+</svg>
