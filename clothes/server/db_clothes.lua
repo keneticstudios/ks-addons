@@ -38,7 +38,14 @@ local function GetPlayerDbClothes(src, identifier)
     if not src or not identifier then return nil end
     
     
-    local appearance = lib.callback.await('ks-addons:clothes:client:getAppearance', src)
+    local ok, appearance = pcall(function()
+        return lib.callback.await('ks-addons:clothes:client:getAppearance', src)
+    end)
+
+    if not ok then
+        print(('^3[KS-Addons] GetPlayerDbClothes: failed to fetch client appearance for %s: %s^0'):format(src, appearance))
+        return nil
+    end
     
     if not appearance then 
         print("^3[KS-Addons] GetPlayerDbClothes: No appearance returned from client^0")

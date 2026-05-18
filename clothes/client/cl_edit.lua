@@ -90,10 +90,20 @@ function Edit.PedProp(ped, data)
 end
 
 function Edit.GetPedAppearance(ped)
-    if Config.Appearance == 'bl' then
-        return exports.bl_appearance:GetPedAppearance(ped)
-    elseif Config.Appearance == 'illenium' then
-        return exports['illenium-appearance']:getPedAppearance(ped)
+    if Config.Appearance == 'bl' and GetResourceState('bl_appearance') == 'started' then
+        local ok, appearance = pcall(function()
+            return exports.bl_appearance:GetPedAppearance(ped)
+        end)
+        if ok and appearance then
+            return appearance
+        end
+    elseif Config.Appearance == 'illenium' and GetResourceState('illenium-appearance') == 'started' then
+        local ok, appearance = pcall(function()
+            return exports['illenium-appearance']:getPedAppearance(ped)
+        end)
+        if ok and appearance then
+            return appearance
+        end
     elseif Config.Appearance == 'qb' then
         local res = Edit.QbClothingResource()
         if GetResourceState(res) == 'started' then
@@ -105,30 +115,41 @@ function Edit.GetPedAppearance(ped)
                 return data
             end
         end
-
-    do
-        local appearance = {
-            model = GetEntityModel(ped),
-            components = {},
-            props = {},
-            hair = { 
-                color = GetPedHairColor(ped),
-                highlight = GetPedHairHighlightColor(ped)
-            }
-        }
-        for i = 0, 11 do
-            appearance.components[#appearance.components+1] = {
-                component_id = i, index = i, drawable = GetPedDrawableVariation(ped, i), value = GetPedDrawableVariation(ped, i), texture = GetPedTextureVariation(ped, i)
-            }
-        end
-        for i = 0, 7 do
-            local drawable = GetPedPropIndex(ped, i)
-            appearance.props[#appearance.props+1] = {
-                prop_id = i, index = i, drawable = drawable, value = drawable, texture = math.max(0, GetPedPropTextureIndex(ped, i))
-            }
-        end
-        return appearance
     end
+
+    local appearance = {
+        model = GetEntityModel(ped),
+        components = {},
+        props = {},
+        hair = {
+            color = GetPedHairColor(ped),
+            highlight = GetPedHairHighlightColor(ped)
+        }
+    }
+
+    for i = 0, 11 do
+        local drawable = GetPedDrawableVariation(ped, i)
+        appearance.components[#appearance.components + 1] = {
+            component_id = i,
+            index = i,
+            drawable = drawable,
+            value = drawable,
+            texture = GetPedTextureVariation(ped, i)
+        }
+    end
+
+    for i = 0, 7 do
+        local drawable = GetPedPropIndex(ped, i)
+        appearance.props[#appearance.props + 1] = {
+            prop_id = i,
+            index = i,
+            drawable = drawable,
+            value = drawable,
+            texture = math.max(0, GetPedPropTextureIndex(ped, i))
+        }
+    end
+
+    return appearance
 end
 
 
