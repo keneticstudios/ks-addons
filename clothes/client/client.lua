@@ -95,6 +95,12 @@ local function ScheduleFullReloadSync(delayMs)
     end)
 end
 
+local function ScheduleSlotSync(delayMs)
+    SetTimeout(delayMs or 1000, function()
+        TriggerServerEvent('ks-addons:clothes:server:syncSlots')
+    end)
+end
+
 local function RestoreAppearanceFromFramework()
     local illeniumStarted = GetResourceState('illenium-appearance') == 'started'
     local blStarted = GetResourceState('bl_appearance') == 'started'
@@ -104,7 +110,7 @@ local function RestoreAppearanceFromFramework()
             if appearance then
                 exports['illenium-appearance']:setPlayerAppearance(appearance)
             end
-            ScheduleFullReloadSync(500)
+            ScheduleSlotSync(500)
         end)
         return
     end
@@ -135,7 +141,7 @@ local function RestoreAppearanceFromFramework()
             if appearance then
                 exports['illenium-appearance']:setPlayerAppearance(appearance)
             end
-            ScheduleFullReloadSync(500)
+            ScheduleSlotSync(500)
         end)
         return
     end
