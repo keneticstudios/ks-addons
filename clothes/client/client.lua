@@ -117,7 +117,7 @@ local function RestoreAppearanceFromFramework()
 
     if Config.Appearance == 'bl' and blStarted then
         TriggerEvent('bl_appearance:client:reloadSkin')
-        ScheduleFullReloadSync(1000)
+        ScheduleSlotSync(1000)
         return
     end
 
@@ -126,12 +126,12 @@ local function RestoreAppearanceFromFramework()
         if GetResourceState(qbRes) == 'started' then
             local health = GetEntityHealth(PlayerPedId())
             local ok = pcall(function()
-                exports[qbRes]:reloadSkin(health)
+                exports[qbRes]:reloadSkin(health, true)
             end)
             if not ok then
                 TriggerServerEvent('qb-clothes:loadPlayerSkin')
             end
-            ScheduleFullReloadSync(3000)
+            ScheduleSlotSync(3000)
             return
         end
     end
@@ -148,7 +148,7 @@ local function RestoreAppearanceFromFramework()
 
     if blStarted then
         TriggerEvent('bl_appearance:client:reloadSkin')
-        ScheduleFullReloadSync(1000)
+        ScheduleSlotSync(1000)
         return
     end
 

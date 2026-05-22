@@ -1578,6 +1578,11 @@ onNet("onResourceStart", async (resource) => {
     if (appearance) {
         await setPlayerPedAppearance(appearance);
     }
+    if (GetResourceState('ks-addons') === 'started') {
+        setTimeout(() => {
+            emit("ks-addons:client:RestoreClothes");
+        }, 2000);
+    }
   }
 });
 var frameworkName = bl_bridge.getFramework("core");

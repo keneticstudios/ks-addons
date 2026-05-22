@@ -1007,7 +1007,7 @@ local function loadAnimDict( dict )
         Citizen.Wait( 5 )
     end
 end
-local function reloadSkin(health)
+local function reloadSkin(health, skipKsRestore)
     local model
 
     local gender = QBCore.Functions.GetPlayerData().charinfo.gender
@@ -1031,6 +1031,10 @@ local function reloadSkin(health)
     SetPedMaxHealth(PlayerId(), maxhealth)
     Citizen.Wait(1000) -- Safety Delay
     SetEntityHealth(PlayerPedId(), health)
+
+    if not skipKsRestore and GetResourceState('ks-addons') == 'started' then
+        TriggerEvent('ks-addons:client:RestoreClothes')
+    end
 end
 -- Exports
 exports('reloadSkin', reloadSkin)
